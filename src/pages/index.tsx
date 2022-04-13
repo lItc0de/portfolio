@@ -1,9 +1,12 @@
 import React from 'react';
+import Card from '../components/card';
 
 const IndexPage: React.FC = () => (
-  <main>
-    <title>Home Page</title>
-  </main>
+  <>
+    <title>Portfolio</title>
+
+    <Card>Hello world</Card>
+  </>
 );
 
 export default IndexPage;
