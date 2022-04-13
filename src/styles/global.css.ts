@@ -10,6 +10,7 @@ globalStyle('body', {
   fontSize: vars.font.size,
   height: '100vh',
   width: '100vw',
+  backgroundColor: vars.color.background,
 });
 
 globalStyle('*', {
@@ -19,4 +20,10 @@ globalStyle('*', {
 globalStyle('#___gatsby, #gatsby-focus-wrapper', {
   isolation: 'isolate',
   height: '100%',
+});
+
+globalStyle('canvas', {
+  margin: 0,
+  padding: 0,
+  display: 'block',
 });
