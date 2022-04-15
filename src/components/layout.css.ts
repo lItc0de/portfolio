@@ -14,7 +14,10 @@ export const main = style({
   zIndex: vars.zIndex.page,
   fontFamily: vars.font.body,
   color: vars.colors.text.normal,
-  padding: 0,
+  padding: vars.spacing.pagePadding,
   height: '100%',
   position: 'relative',
+  display: 'flex',
+  flexDirection: 'row',
+  gap: vars.spacing.pagePadding,
 });

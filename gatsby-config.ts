@@ -10,6 +10,14 @@ const config: GatsbyConfig = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown',
+        path: 'src/markdown',
+      },
+    },
+    'gatsby-transformer-remark',
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/images/icon.png',
