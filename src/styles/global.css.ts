@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
-import vars from './globalTheme.css';
+import vars from './themes.css';
 
 globalStyle('html, body', {
   margin: 0,
@@ -10,7 +10,6 @@ globalStyle('body', {
   fontSize: vars.font.size,
   height: '100vh',
   width: '100vw',
-  backgroundColor: vars.color.background,
 });
 
 globalStyle('*', {
