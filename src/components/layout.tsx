@@ -5,6 +5,8 @@ import * as styles from './layout.css';
 import {
   defaultTheme, mateLightsTheme, arSlantedTheme, artworkGeneratorTheme,
 } from '../styles/themes.css';
+import Navigate from './navigate';
+import { getPageName } from '../utils/locationMapper';
 
 const themeMapping: { [key: string]: string } = {
   mateLights: mateLightsTheme,
@@ -17,16 +19,18 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ children, location }) => {
-  const page = location.pathname.split('/')[1];
+  const page = getPageName(location.pathname);
   const theme: string = themeMapping[page] || defaultTheme;
 
   return (
     <div className={`${styles.layout} ${theme}`}>
-      <Background />
+      <Navigate location={location}>
+        <Background />
 
-      <main className={styles.main}>
-        {children}
-      </main>
+        <main className={styles.main}>
+          {children}
+        </main>
+      </Navigate>
     </div>
   );
 };
