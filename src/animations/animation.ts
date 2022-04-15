@@ -1,42 +1,24 @@
 /* eslint-disable no-param-reassign */
 import P5 from 'p5';
 
-const rad = 60; // Width of the shape
-let xpos: number;
-let ypos: number; // Starting position of shape
+import { getColors } from './colorHelper';
+import Particle from './Particle';
 
-const xspeed = 2.8; // Speed of the shape
-const yspeed = 2.2; // Speed of the shape
-
-let xdirection = 1; // Left or Right
-let ydirection = 1; // Top to Bottom
+export { setColorVars } from './colorHelper';
 
 const createAnimation = (s: P5) => {
+  const particles = Array.from(Array(100).keys()).map(() => new Particle(s, '#000'));
+
   s.setup = () => {
     s.createCanvas(s.windowWidth, s.windowHeight);
     s.frameRate(30);
-    s.ellipseMode(s.RADIUS);
-    // Set the starting position of the shape
-    xpos = s.width / 2;
-    ypos = s.height / 2;
+    s.noStroke();
   };
 
   s.draw = () => {
-    // Update the position of the shape
-    xpos += xspeed * xdirection;
-    ypos += yspeed * ydirection;
-
-    // Test to see if the shape exceeds the boundaries of the screen
-    // If it does, reverse its direction by multiplying by -1
-    if (xpos > s.width - rad || xpos < rad) {
-      xdirection *= -1;
-    }
-    if (ypos > s.height - rad || ypos < rad) {
-      ydirection *= -1;
-    }
-
-    // Draw the shape
-    s.ellipse(xpos, ypos, rad, rad);
+    const colors = getColors();
+    s.background(colors.background);
+    particles.forEach((particle) => particle.run(colors.primary));
   };
 
   s.windowResized = () => {

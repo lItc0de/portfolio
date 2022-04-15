@@ -1,14 +1,19 @@
 import React, { Suspense, lazy } from 'react';
+import { ColorVars } from '../interfaces/colors';
 
 const BackgroundAnimation = lazy(() => import('../animations/backgroundAnimation'));
 
-const Background: React.FC = () => {
+type Props = {
+  colorVars: ColorVars
+}
+
+const Background: React.FC<Props> = ({ colorVars }) => {
   const isSSR = typeof window === 'undefined';
 
   if (isSSR) return null;
   return (
     <Suspense fallback={<div />}>
-      <BackgroundAnimation />
+      <BackgroundAnimation colorVars={colorVars} />
     </Suspense>
   );
 };

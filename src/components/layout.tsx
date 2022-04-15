@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Background from './background';
 
 import * as styles from './layout.css';
-import {
+import vars, {
   defaultTheme, mateLightsTheme, arSlantedTheme, artworkGeneratorTheme,
 } from '../styles/themes.css';
 import Navigate from './navigate';
 import { getPageName } from '../utils/locationMapper';
+import { ColorVars } from '../interfaces/colors';
 
 const themeMapping: { [key: string]: string } = {
   mateLights: mateLightsTheme,
@@ -22,10 +23,19 @@ const Layout: React.FC<Props> = ({ children, location }) => {
   const page = getPageName(location.pathname);
   const theme: string = themeMapping[page] || defaultTheme;
 
+  const [colorVars, setColorVars] = useState<ColorVars>({});
+
+  useEffect(() => {
+    setColorVars({
+      primary: vars.colors.primary,
+      background: vars.colors.background.page,
+    });
+  }, [vars, page]);
+
   return (
-    <div className={`${styles.layout} ${theme}`}>
+    <div id="layout" className={`${styles.layout} ${theme}`}>
       <Navigate location={location}>
-        <Background />
+        <Background colorVars={colorVars} />
 
         <main className={styles.main}>
           {children}
