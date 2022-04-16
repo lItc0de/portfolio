@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import vars from '../styles/themes.css';
+import vars from './themes.css';
 
 export const index = style({
   gap: vars.spacing.pagePadding,

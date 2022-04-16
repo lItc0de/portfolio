@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Card from '../components/card';
-import { index, welcomeCard, aboutMeCard } from './index.css';
+import { index, welcomeCard, aboutMeCard } from '../styles/index.css';
 import { routes } from '../utils/locationMapper';
 
 type Props = {
