@@ -16,6 +16,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@fontsource/fira-code": "^4.5.8",
+    "@fontsource/karla": "^4.5.5",
+    "@fontsource/raleway": "^4.5.5",
+    "@fontsource/shrikhand": "^4.5.5",
     "@vanilla-extract/babel-plugin": "^1.1.5",
     "@vanilla-extract/css": "^1.6.8",
     "@vanilla-extract/webpack-plugin": "^2.1.7",

@@ -2,7 +2,6 @@ import { style } from '@vanilla-extract/css';
 import vars from '../styles/themes.css';
 
 export const layout = style({
-  fontFamily: vars.font.body,
   color: vars.colors.text.normal,
   backgroundColor: vars.colors.background.page,
   padding: 0,
@@ -12,13 +11,15 @@ export const layout = style({
 
 export const main = style({
   zIndex: vars.zIndex.page,
-  fontFamily: vars.font.body,
   color: vars.colors.text.normal,
   padding: vars.spacing.pagePadding,
-  height: '100%',
+  height: '100vh',
+  width: '100vw',
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
   gap: vars.spacing.pagePadding,
+  overflow: 'hidden',
+  overflowY: 'scroll',
 });

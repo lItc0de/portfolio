@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Card from '../components/card';
+import { index, welcomeCard, aboutMeCard } from './index.css';
 
 type Props = {
   data: {
@@ -22,28 +23,29 @@ const IndexPage: React.FC<Props> = ({ data }) => {
   return (
     <>
       <title>Portfolio</title>
-
-      {welcome && (
-      <Card>
-        <div
+      <div className={index}>
+        {welcome && (
+        <Card className={welcomeCard}>
+          <div
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: welcome.childMarkdownRemark.html,
-          }}
-        />
-      </Card>
-      )}
+            dangerouslySetInnerHTML={{
+              __html: welcome.childMarkdownRemark.html,
+            }}
+          />
+        </Card>
+        )}
 
-      {aboutMe && (
-      <Card>
-        <div
+        {aboutMe && (
+        <Card className={aboutMeCard}>
+          <div
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: aboutMe.childMarkdownRemark.html,
-          }}
-        />
-      </Card>
-      )}
+            dangerouslySetInnerHTML={{
+              __html: aboutMe.childMarkdownRemark.html,
+            }}
+          />
+        </Card>
+        )}
+      </div>
     </>
   );
 };

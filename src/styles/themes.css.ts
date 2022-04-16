@@ -1,9 +1,11 @@
 import { createTheme, createGlobalTheme } from '@vanilla-extract/css';
 
 const globalTheme = createGlobalTheme(':root', {
-  font: {
-    body: 'arial',
-    size: '16px',
+  fonts: {
+    body: '"Karla", sans-serif',
+    headings: '"Shrikhand", cursive',
+    code: '"Fira Code", monospace',
+    size: '20px',
   },
   spacing: {
     pagePadding: '3rem',
@@ -24,12 +26,13 @@ export const [defaultTheme, colors] = createTheme({
   primary: '#EEA1DB',
   secondary: '#6AE2C5',
   text: {
-    normal: 'rgba(255, 255, 255, 0.9)',
-    dimmed: 'rgba(255, 255, 255, 0.8)',
+    normal: '#111827',
+    dimmed: '#111827',
   },
   background: {
-    page: 'rgba(0, 0, 0, 1)',
+    page: '#ccfbf1',
     card: 'rgba(0, 0, 0, 0.5)',
+    code: '#99f6e4',
   },
   stroke: 'rgba(255, 255, 255, 0.33)',
 });
@@ -44,6 +47,7 @@ export const mateLightsTheme = createTheme(colors, {
   background: {
     page: '#FFF100',
     card: 'rgba(0, 0, 0, 0.5)',
+    code: 'rgba(0, 0, 0, 0.5)',
   },
   stroke: 'rgba(255, 255, 255, 0.33)',
 });
@@ -58,6 +62,7 @@ export const arSlantedTheme = createTheme(colors, {
   background: {
     page: '#FFF100',
     card: 'rgba(0, 0, 0, 0.5)',
+    code: 'rgba(0, 0, 0, 0.5)',
   },
   stroke: 'rgba(255, 255, 255, 0.33)',
 });
@@ -72,6 +77,7 @@ export const artworkGeneratorTheme = createTheme(colors, {
   background: {
     page: '#7B61FF',
     card: 'rgba(0, 0, 0, 0.5)',
+    code: 'rgba(0, 0, 0, 0.5)',
   },
   stroke: 'rgba(255, 255, 255, 0.33)',
 });
