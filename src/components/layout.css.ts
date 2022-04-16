@@ -19,5 +19,6 @@ export const main = style({
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
+  flexWrap: 'wrap',
   gap: vars.spacing.pagePadding,
 });
