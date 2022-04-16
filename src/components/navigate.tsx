@@ -3,10 +3,19 @@ import { navigate } from 'gatsby';
 import { routes } from '../utils/locationMapper';
 
 type Props = {
-  location: Location
+  location: Location;
+  className?: string;
+  id?: string;
 }
 
-const Navigate: React.FC<Props> = ({ children, location }) => {
+const defaultProps: Props = {
+  className: '',
+  id: '',
+} as Props;
+
+const Navigate: React.FC<Props> = ({
+  children, location, className, id,
+}) => {
   const nextPage = () => {
     const routesCount = routes.length;
     const currentIndex = routes.indexOf(location.pathname);
@@ -36,7 +45,9 @@ const Navigate: React.FC<Props> = ({ children, location }) => {
     };
   }, [location]);
 
-  return (<div>{children}</div>);
+  return (<div id={id} className={className}>{children}</div>);
 };
+
+Navigate.defaultProps = defaultProps;
 
 export default Navigate;

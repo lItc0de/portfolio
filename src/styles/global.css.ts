@@ -14,7 +14,6 @@ globalStyle('body', {
   fontFamily: vars.fonts.body,
   fontSize: vars.fonts.size,
   height: '100vh',
-  width: '100vw',
 });
 
 globalStyle('*', {
@@ -43,7 +42,7 @@ globalStyle('code', {
 
 globalStyle('a', {
   textDecoration: 'underline',
-  color: vars.colors.text.normal,
+  color: vars.colors.primary,
 });
 
 // globalStyle('em', {
@@ -76,7 +75,7 @@ globalStyle('h6', {
 
 // Lists
 globalStyle('ul', {
-  padding: '0 1.5rem',
+  padding: '0 2.2rem',
 });
 
 globalStyle('li', {
@@ -86,7 +85,7 @@ globalStyle('li', {
 });
 
 globalStyle('li::before', {
-  content: '\\25b6',
+  content: '☻',
   color: vars.colors.text.dimmed,
   display: 'inline-block',
   width: '1.2rem',

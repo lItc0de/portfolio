@@ -33,15 +33,13 @@ const Layout: React.FC<Props> = ({ children, location }) => {
   }, [vars, page]);
 
   return (
-    <div id="layout" className={`${styles.layout} ${theme}`}>
-      <Navigate location={location}>
-        <Background colorVars={colorVars} />
+    <Navigate id="layout" className={`${styles.layout} ${theme}`} location={location}>
+      <Background colorVars={colorVars} />
 
-        <main className={styles.main}>
-          {children}
-        </main>
-      </Navigate>
-    </div>
+      <main className={styles.main}>
+        {children}
+      </main>
+    </Navigate>
   );
 };
 

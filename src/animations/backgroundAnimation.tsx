@@ -7,10 +7,15 @@ import p5Animation, { setColorVars } from './animation';
 import { ColorVars } from '../interfaces/colors';
 
 type Props = {
-  colorVars: ColorVars
+  colorVars: ColorVars;
+  className?: string;
 }
 
-const BackgroundAnimation: React.FC<Props> = ({ colorVars }) => {
+const defaultProps: Props = {
+  className: '',
+} as Props;
+
+const BackgroundAnimation: React.FC<Props> = ({ colorVars, className }) => {
   const canvas = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,11 +34,13 @@ const BackgroundAnimation: React.FC<Props> = ({ colorVars }) => {
   }, [colorVars]);
 
   return (
-    <div className={styles.backgroundAnimation}>
+    <div className={`${styles.backgroundAnimation} ${className}`}>
       <div ref={canvas} />
       <div id="fr" className={styles.framerate} />
     </div>
   );
 };
+
+BackgroundAnimation.defaultProps = defaultProps;
 
 export default BackgroundAnimation;

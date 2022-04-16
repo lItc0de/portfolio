@@ -1,7 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Card from '../components/card';
 import { index, welcomeCard, aboutMeCard } from './index.css';
+import { routes } from '../utils/locationMapper';
 
 type Props = {
   data: {
@@ -45,6 +46,7 @@ const IndexPage: React.FC<Props> = ({ data }) => {
           />
         </Card>
         )}
+        <Link to={routes[1]}>Show me the Projects</Link>
       </div>
     </>
   );
