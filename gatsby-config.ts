@@ -18,6 +18,7 @@ const config: GatsbyConfig = {
       },
     },
     'gatsby-transformer-remark',
+    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

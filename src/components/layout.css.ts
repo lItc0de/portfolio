@@ -6,19 +6,11 @@ export const layout = style({
   color: vars.colors.text.normal,
   backgroundColor: vars.colors.background.page,
   padding: 0,
-  height: '100%',
+  minHeight: '100%',
   position: 'relative',
-});
-
-const mainResponsive = sprinkles({
-  padding: {
-    mobile: 'medium',
-    desktop: 'xlarge',
-  },
-  gap: {
-    mobile: 'medium',
-    desktop: 'xlarge',
-  },
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
 });
 
 export const main = style([
@@ -27,9 +19,19 @@ export const main = style([
     color: vars.colors.text.normal,
     gap: vars.spacing.pagePadding,
     position: 'relative',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
   },
-  mainResponsive,
+  sprinkles({
+    padding: {
+      mobile: 'medium',
+      desktop: 'xlarge',
+    },
+    gap: {
+      mobile: 'medium',
+      desktop: 'xlarge',
+    },
+    flex: {
+      mobile: 'mobile',
+      desktop: 'desktop',
+    },
+  }),
 ]);

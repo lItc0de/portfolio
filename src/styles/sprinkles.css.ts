@@ -4,7 +4,7 @@ import {
 } from '@vanilla-extract/sprinkles';
 
 export const mediaQueries = {
-  desktop: 'screen and (min-width: 1024px)',
+  desktop: 'screen and (min-width: 750px)',
 };
 
 const space = {
@@ -16,7 +16,7 @@ const space = {
 };
 
 const pageWidth = {
-  mobile: '1 1 100%',
+  mobile: '0 1 700px',
   desktop: '0 0 700px',
 };
 
