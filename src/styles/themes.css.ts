@@ -1,5 +1,12 @@
 import { createTheme, createGlobalTheme } from '@vanilla-extract/css';
 
+export const pageColors: { [key: string]: string } = {
+  default: '#ccfbf1',
+  arSlanted: '#FFF100',
+  artworkGenerator: '#7B61FF',
+  mateLights: '#FFF100',
+};
+
 const globalTheme = createGlobalTheme(':root', {
   fonts: {
     body: '"Karla", sans-serif',
@@ -53,7 +60,7 @@ export const [defaultTheme, colors] = createTheme({
     dimmed: '#111827',
   },
   background: {
-    page: '#ccfbf1',
+    page: pageColors.default,
     card: 'rgba(0, 0, 0, 0.5)',
     code: '#99f6e4',
   },
@@ -68,7 +75,7 @@ export const arSlantedTheme = createTheme(colors, {
     dimmed: 'rgba(0, 0, 0, 0.7)',
   },
   background: {
-    page: '#FFF100',
+    page: pageColors.arSlanted,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.1)',
   },
@@ -83,7 +90,7 @@ export const artworkGeneratorTheme = createTheme(colors, {
     dimmed: 'rgba(0, 0, 0, 0.8)',
   },
   background: {
-    page: '#7B61FF',
+    page: pageColors.artworkGenerator,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.5)',
   },
@@ -98,7 +105,7 @@ export const mateLightsTheme = createTheme(colors, {
     dimmed: 'rgba(2, 27, 255, 0.8)',
   },
   background: {
-    page: '#FFF100',
+    page: pageColors.mateLights,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.5)',
   },

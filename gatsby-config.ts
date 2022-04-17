@@ -9,6 +9,7 @@ const config: GatsbyConfig = {
     'gatsby-plugin-vanilla-extract',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -20,7 +21,9 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        name: 'Basti\'s portfolio',
         icon: 'src/images/icon.png',
+        theme_color_in_head: false,
       },
     },
   ],

@@ -10,6 +10,7 @@ globalStyle('html, body', {
 globalStyle('body', {
   fontFamily: vars.fonts.body,
   fontSize: vars.sizes.body.mobile,
+  backgroundColor: vars.colors.background.page,
   height: '100vh',
   '@media': {
     [mediaQueries.desktop]: {
