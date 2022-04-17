@@ -1,6 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Card from '../components/card';
+import { artworkGenerator } from '../styles/artworkGenerator.css';
+import { routes } from '../utils/locationMapper';
 
 type Props = {
   data: {
@@ -19,7 +21,7 @@ const ArtworkGenerator: React.FC<Props> = ({ data }) => {
   const description = data.allFile.nodes.find(({ name }) => name === 'artworkGenerator');
 
   return (
-    <>
+    <div className={artworkGenerator}>
       <title>Artwork generator | Portfolio</title>
       {description && (
       <Card>
@@ -31,7 +33,9 @@ const ArtworkGenerator: React.FC<Props> = ({ data }) => {
         />
       </Card>
       )}
-    </>
+
+      <Link to={routes[3]}>Take me to the last project</Link>
+    </div>
   );
 };
 

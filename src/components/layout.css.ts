@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import vars from '../styles/themes.css';
+import { sprinkles } from '../styles/sprinkles.css';
 
 export const layout = style({
   color: vars.colors.text.normal,
@@ -9,13 +10,26 @@ export const layout = style({
   position: 'relative',
 });
 
-export const main = style({
-  zIndex: vars.zIndex.page,
-  color: vars.colors.text.normal,
-  padding: vars.spacing.pagePadding,
-  gap: vars.spacing.pagePadding,
-  position: 'relative',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
+const mainResponsive = sprinkles({
+  padding: {
+    mobile: 'medium',
+    desktop: 'xlarge',
+  },
+  gap: {
+    mobile: 'medium',
+    desktop: 'xlarge',
+  },
 });
+
+export const main = style([
+  {
+    zIndex: vars.zIndex.page,
+    color: vars.colors.text.normal,
+    gap: vars.spacing.pagePadding,
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  mainResponsive,
+]);

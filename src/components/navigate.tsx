@@ -34,7 +34,10 @@ const Navigate: React.FC<Props> = ({
   const handleKeydown = (event: KeyboardEvent) => {
     if (event.key === undefined) return;
     if (event.key === 'ArrowDown') nextPage();
-    if (event.key === 'ArrowUp') prevPage();
+    else if (event.key === 'ArrowUp') prevPage();
+    else return;
+
+    event.preventDefault();
   };
 
   useEffect(() => {

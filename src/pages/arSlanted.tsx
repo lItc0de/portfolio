@@ -1,6 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Card from '../components/card';
+import { routes } from '../utils/locationMapper';
+import { arSlanted, videoClass } from '../styles/arSlanted.css';
+import video from '../data/slanted.webm';
 
 type Props = {
   data: {
@@ -19,8 +22,10 @@ const ArSlanted: React.FC<Props> = ({ data }) => {
   const description = data.allFile.nodes.find(({ name }) => name === 'arSlanted');
 
   return (
-    <>
+    <div className={arSlanted}>
       <title>Augmented Reality | Portfolio</title>
+      <video className={videoClass} src={video} muted autoPlay loop />
+
       {description && (
       <Card>
         <div
@@ -31,7 +36,9 @@ const ArSlanted: React.FC<Props> = ({ data }) => {
         />
       </Card>
       )}
-    </>
+
+      <Link to={routes[2]}>Take me to the next project</Link>
+    </div>
   );
 };
 

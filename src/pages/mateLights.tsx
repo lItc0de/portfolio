@@ -1,6 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Card from '../components/card';
+import { mateLights } from '../styles/mateLights.css';
+import { routes } from '../utils/locationMapper';
 
 type Props = {
   data: {
@@ -19,7 +21,7 @@ const MateLights: React.FC<Props> = ({ data }) => {
   const description = data.allFile.nodes.find(({ name }) => name === 'mateLights');
 
   return (
-    <>
+    <div className={mateLights}>
       <title>Mate lights | Portfolio</title>
       {description && (
       <Card>
@@ -31,7 +33,9 @@ const MateLights: React.FC<Props> = ({ data }) => {
         />
       </Card>
       )}
-    </>
+
+      <Link to={routes[0]}>Take me back to the start</Link>
+    </div>
   );
 };
 

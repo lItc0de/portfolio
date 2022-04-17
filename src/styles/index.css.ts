@@ -1,13 +1,26 @@
 import { style } from '@vanilla-extract/css';
-import vars from './themes.css';
+// import vars from './themes.css';
+import { sprinkles } from './sprinkles.css';
 
-export const index = style({
-  gap: vars.spacing.pagePadding,
-  display: 'flex',
-  flex: '0 0 60rem',
-  flexDirection: 'column',
-  // width: '100%',
-});
+export const index = style([
+  {
+    display: 'flex',
+  },
+  sprinkles({
+    flexDirection: {
+      mobile: 'column',
+      desktop: 'column',
+    },
+    flex: {
+      mobile: 'mobile',
+      desktop: 'desktop',
+    },
+    gap: {
+      mobile: 'medium',
+      desktop: 'xlarge',
+    },
+  }),
+]);
 
 const cardDefaults = style({
   maxWidth: '50rem',
