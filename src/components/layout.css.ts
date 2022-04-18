@@ -4,13 +4,14 @@ import { sprinkles } from '../styles/sprinkles.css';
 
 export const layout = style({
   color: vars.colors.text.normal,
-  backgroundColor: vars.colors.background.page,
+  backgroundColor: vars.colors.background.pageTransparent,
   padding: 0,
   minHeight: '100%',
   position: 'relative',
   display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 });
 
 export const main = style([
@@ -28,10 +29,6 @@ export const main = style([
     gap: {
       mobile: 'medium',
       desktop: 'xlarge',
-    },
-    flex: {
-      mobile: 'mobile',
-      desktop: 'desktop',
     },
   }),
 ]);

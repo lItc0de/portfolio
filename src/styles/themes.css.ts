@@ -1,10 +1,10 @@
 import { createTheme, createGlobalTheme } from '@vanilla-extract/css';
 
 export const pageColors: { [key: string]: string } = {
-  default: '#ccfbf1',
-  arSlanted: '#FFF100',
-  artworkGenerator: '#7B61FF',
-  mateLights: '#FFF100',
+  default: '204, 251, 241',
+  arSlanted: '255, 241, 0',
+  artworkGenerator: '123, 97, 255',
+  mateLights: '255, 241, 0',
 };
 
 const globalTheme = createGlobalTheme(':root', {
@@ -60,7 +60,8 @@ export const [defaultTheme, colors] = createTheme({
     dimmed: '#111827',
   },
   background: {
-    page: pageColors.default,
+    page: `rgba(${pageColors.default}, 1)`,
+    pageTransparent: `rgba(${pageColors.default}, 0.5)`,
     card: 'rgba(0, 0, 0, 0.5)',
     code: '#99f6e4',
   },
@@ -75,7 +76,8 @@ export const arSlantedTheme = createTheme(colors, {
     dimmed: 'rgba(0, 0, 0, 0.7)',
   },
   background: {
-    page: pageColors.arSlanted,
+    page: `rgba(${pageColors.arSlanted}, 1)`,
+    pageTransparent: `rgba(${pageColors.arSlanted}, 0.5)`,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.1)',
   },
@@ -90,7 +92,8 @@ export const artworkGeneratorTheme = createTheme(colors, {
     dimmed: 'rgba(0, 0, 0, 0.8)',
   },
   background: {
-    page: pageColors.artworkGenerator,
+    page: `rgba(${pageColors.artworkGenerator}, 1)`,
+    pageTransparent: `rgba(${pageColors.artworkGenerator}, 0.5)`,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.5)',
   },
@@ -105,7 +108,8 @@ export const mateLightsTheme = createTheme(colors, {
     dimmed: 'rgba(2, 27, 255, 0.8)',
   },
   background: {
-    page: pageColors.mateLights,
+    page: `rgba(${pageColors.mateLights}, 1)`,
+    pageTransparent: `rgba(${pageColors.mateLights}, 0.5)`,
     card: 'rgba(0, 0, 0, 0.5)',
     code: 'rgba(0, 0, 0, 0.5)',
   },

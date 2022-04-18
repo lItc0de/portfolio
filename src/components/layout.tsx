@@ -3,27 +3,18 @@ import { Helmet } from 'react-helmet';
 import Background from './background';
 
 import * as styles from './layout.css';
-import vars, {
-  defaultTheme, mateLightsTheme, arSlantedTheme, artworkGeneratorTheme, pageColors,
-} from '../styles/themes.css';
+import vars from '../styles/themes.css';
 import Navigate from './navigate';
-import { getPageName } from '../utils/locationMapper';
 import { ColorVars } from '../interfaces/colors';
-
-const themeMapping: { [key: string]: string } = {
-  mateLights: mateLightsTheme,
-  artworkGenerator: artworkGeneratorTheme,
-  arSlanted: arSlantedTheme,
-};
+import { getTheme, getThemeColor } from '../utils/themeMapper';
 
 type Props = {
   location: Location
 }
 
 const Layout: React.FC<Props> = ({ children, location }) => {
-  const page = getPageName(location.pathname);
-  const theme: string = themeMapping[page] || defaultTheme;
-  const themeColor: string = pageColors[page] || pageColors.default;
+  const theme: string = getTheme(location.pathname);
+  const themeColor: string = getThemeColor(location.pathname);
 
   const [colorVars, setColorVars] = useState<ColorVars>({});
 
@@ -34,7 +25,7 @@ const Layout: React.FC<Props> = ({ children, location }) => {
     });
 
     document.body.classList.value = theme;
-  }, [vars, page, theme]);
+  }, [vars, location, theme]);
 
   return (
     <>
@@ -46,9 +37,8 @@ const Layout: React.FC<Props> = ({ children, location }) => {
           },
         ]}
       />
+      <Background colorVars={colorVars} />
       <Navigate id="layout" className={styles.layout} location={location}>
-        <Background colorVars={colorVars} />
-
         <main className={styles.main}>
           {children}
         </main>
