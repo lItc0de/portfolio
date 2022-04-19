@@ -12,3 +12,7 @@ The architecture is pretty simple:
 5. Connect the LEDs to a adrunio and a power supply.
 6. Programm the LEDs to light up.
 
+
+
+
+https://github.com/pololu/pololu-led-strip-arduino
