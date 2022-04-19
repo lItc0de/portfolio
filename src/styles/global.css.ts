@@ -54,6 +54,7 @@ globalStyle('a', {
 
 globalStyle('h1, h2, h3, h4, h5, h6', {
   color: vars.colors.text.normal,
+  margin: '2rem 0 1rem',
 });
 
 globalStyle('h1', {
@@ -95,6 +96,7 @@ globalStyle('h4', {
 
 globalStyle('h5', {
   fontSize: vars.sizes.headings.mobile.h5,
+  fontFamily: vars.fonts.headings,
   '@media': {
     [mediaQueries.desktop]: {
       fontSize: vars.sizes.headings.desktop.h5,
@@ -116,13 +118,12 @@ globalStyle('ul', {
   padding: '0 2.2rem',
 });
 
-globalStyle('li', {
-  // listStyle: 'disclosure-closed',
+globalStyle('ul > li', {
   listStyle: 'none',
   margin: '0.25rem 0',
 });
 
-globalStyle('li::before', {
+globalStyle('ul > li::before', {
   content: '☻',
   color: vars.colors.text.dimmed,
   display: 'inline-block',

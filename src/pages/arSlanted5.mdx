@@ -1,22 +1,21 @@
 <title>Augmented Reality | Portfolio</title>
 
-### Combining modern javascript framework with the library
-#### AR.js is not designed to be used in a modern javascript frameworks like `react`. Therefore it was tricky to include it in a way that everything was starting up correctly (`marker loading` and access to the `camera`).
+##### Problem #2
+
+###### Combining a modern javascript framework with *AR.js*
+
+**AR.js** is not designed to be used in a modern javascript frameworks like `react`.
+Therefore it was tricky to include it in a way that everything was working correctly (`marker loading` and access to the `camera`).
 
 As I'm coming from a background of extensivly using modern frontend frameworks like `vuejs` or
 `react` I didn't want to miss out on all the convenience it gives me.
-`AR.js` is sadly not a module based javascript library and not avaliable via the
-`node package manager (npm)`, so I had to include it directly into the `head` of the `html document`.
-This has some implications, as it is polluting the `global namespace` with it's definitions and it
-is harder to get control of loading times and code execution times. So I hade to make sure that the
-timings, of when is the react app loaded and when is the `AR.js library` loaded, correct. Luckily
-there is some tooling around `react` called `gatsbyjs` that makes it easy to render the webpages on
-the server side and only serve static web pages. This allowed me to use `react` and `AR.js` together.
 
+Normally in a react app you would install a library via the `node package manager (npm)` but sadly
+**AR.js** just doesn't work this way. It expects to be used in a *static* web page, where it is
+loaded in the `head` of the `html document`. After being loaded it is immediatley executed,
+regardless of the rest of the react app beging loaded or not. So when it is loaded to fast and the
+react app is not finished builiding up the rest of the page it didn't work.
 
-### Not every browser is created equal
-#### On mobile it didn't work well with every browser, so I had to find a workaround for browsers where the `AR functionality` didn't work as expected.
-
-The solution of this problem was quite easy. Browsers where it didn't work well just show a fallback
-webpage where the user can click on the title of the image in the magazine and then see the related
-video.
+Luckily there is some tooling around `react` called `gatsbyjs` that makes it easy to render the
+webpages on the server side and only serve *static* web pages.
+This allowed me to use `react` and `AR.js` together.

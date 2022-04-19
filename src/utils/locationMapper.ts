@@ -1,11 +1,16 @@
 export const routes: string[] = [
   '/',
+  '/welcome1/',
   '/arSlanted/',
   '/arSlanted2/',
   '/arSlanted3/',
   '/arSlanted4/',
   '/arSlanted5/',
   '/arSlanted6/',
+  '/arSlanted7/',
   '/artworkGenerator/',
+  '/artworkGenerator2/',
+  '/artworkGenerator3/',
   '/mateLights/',
+  '/mateLights2/',
 ];
