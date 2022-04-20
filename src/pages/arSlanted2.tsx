@@ -2,7 +2,6 @@ import React from 'react';
 
 import * as styles from '../styles/arSlanted.css';
 import Content from '../components/content';
-// import Markdown from '../markdown/arSlanted/arSlanted2.mdx';
 import coverImage from '../media/arSlanted/cover.webp';
 
 const ArSlanted: React.FC = () => (
