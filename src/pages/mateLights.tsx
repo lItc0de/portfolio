@@ -6,6 +6,7 @@ import Markdown from '../markdown/mateLights/mateLights1.mdx';
 const MateLights: React.FC = () => (
   <>
     <title>Mate lights | Portfolio</title>
+
     <Content nextPage="/mateLights2/" nextPageText="Next">
       <Markdown />
     </Content>

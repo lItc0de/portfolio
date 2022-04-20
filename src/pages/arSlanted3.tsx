@@ -6,6 +6,7 @@ import Markdown from '../markdown/arSlanted/arSlanted3.mdx';
 const ArSlanted: React.FC = () => (
   <>
     <title>Augmented Reality | Portfolio</title>
+
     <Content nextPage="/arSlanted4/" nextPageText="Next">
       <Markdown />
     </Content>
