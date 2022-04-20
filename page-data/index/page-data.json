@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-index-mdx",
+    "componentChunkName": "component---src-pages-index-tsx",
     "path": "/",
-    "result": {"pageContext":{"frontmatter":{}}},
+    "result": {"pageContext":{}},
     "staticQueryHashes": []}

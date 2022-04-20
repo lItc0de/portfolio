@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-ar-slanted-mdx",
+    "componentChunkName": "component---src-pages-ar-slanted-tsx",
     "path": "/arSlanted/",
-    "result": {"pageContext":{"frontmatter":{}}},
+    "result": {"pageContext":{}},
     "staticQueryHashes": []}

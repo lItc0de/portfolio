@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-artwork-generator-2-mdx",
+    "componentChunkName": "component---src-pages-artwork-generator-2-tsx",
     "path": "/artworkGenerator2/",
-    "result": {"pageContext":{"frontmatter":{}}},
+    "result": {"pageContext":{}},
     "staticQueryHashes": []}

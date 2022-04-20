@@ -1,5 +1,5 @@
 {
-    "componentChunkName": "component---src-pages-mate-lights-mdx",
+    "componentChunkName": "component---src-pages-mate-lights-tsx",
     "path": "/mateLights/",
-    "result": {"pageContext":{"frontmatter":{}}},
+    "result": {"pageContext":{}},
     "staticQueryHashes": []}
