@@ -7,12 +7,13 @@ import Particle from './Particle';
 export { setColorVars } from './colorHelper';
 
 const createAnimation = (s: P5) => {
-  const particles = Array.from(Array(100).keys()).map(() => new Particle(s, '#000'));
+  let particles: Particle[];
 
   s.setup = () => {
     s.createCanvas(s.windowWidth, s.windowHeight);
     s.frameRate(30);
     s.noStroke();
+    particles = Array.from(Array(100).keys()).map(() => new Particle(s, '#000'));
   };
 
   s.draw = () => {

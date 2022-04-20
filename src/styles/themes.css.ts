@@ -54,6 +54,7 @@ const globalTheme = createGlobalTheme(':root', {
 
 export const [defaultTheme, colors] = createTheme({
   primary: '#EEA1DB',
+  primaryMuted: 'rgba(238, 161, 219, 0.4)',
   secondary: '#EEA1DB',
   text: {
     normal: '#111827',
@@ -70,6 +71,7 @@ export const [defaultTheme, colors] = createTheme({
 
 export const arSlantedTheme = createTheme(colors, {
   primary: '#000000',
+  primaryMuted: 'rgba(0, 0, 0, 0.3)',
   secondary: '#FFFFFF',
   text: {
     normal: '#000000',
@@ -86,6 +88,7 @@ export const arSlantedTheme = createTheme(colors, {
 
 export const artworkGeneratorTheme = createTheme(colors, {
   primary: '#6AE2C5',
+  primaryMuted: 'rgba(106, 226, 197, 0.3)',
   secondary: '#6AE2C5',
   text: {
     normal: 'rgba(0, 0, 0, 0.9)',
@@ -102,6 +105,7 @@ export const artworkGeneratorTheme = createTheme(colors, {
 
 export const mateLightsTheme = createTheme(colors, {
   primary: '#EEA1DB',
+  primaryMuted: 'rgba(238, 161, 219, 0.5)',
   secondary: 'rgba(2, 27, 255, 0.9)',
   text: {
     normal: 'rgba(2, 27, 255, 0.9)',

@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children, location }) => {
 
   useEffect(() => {
     setColorVars({
-      primary: vars.colors.primary,
+      primary: vars.colors.primaryMuted,
       background: vars.colors.background.page,
     });
 

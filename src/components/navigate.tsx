@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { navigate } from 'gatsby';
 import { routes } from '../utils/locationMapper';
 
@@ -89,6 +89,10 @@ const Navigate: React.FC<Props> = ({
 
   const handleTouchstart = (event: TouchEvent) => {
     if (event.type !== 'touchstart') return;
+
+    const target = event.target as HTMLElement;
+    if (target && target.tagName === 'A') return;
+
     touchedX = event.touches[0].clientX;
 
     const timeThreshold = 500;

@@ -4,7 +4,7 @@ import { sprinkles } from '../styles/sprinkles.css';
 
 export const content = style([
   {
-    backgroundColor: vars.colors.background.pageTransparent,
+    // backgroundColor: vars.colors.background.pageTransparent,
     zIndex: vars.zIndex.page,
     color: vars.colors.text.normal,
     position: 'relative',
@@ -14,6 +14,7 @@ export const content = style([
     alignItems: 'flex-start',
     justifyContent: 'center',
     width: '100%',
+    maxWidth: '60rem',
   },
   sprinkles({
     padding: {
