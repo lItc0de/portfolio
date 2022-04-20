@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 import { routes } from '../utils/locationMapper';
 
@@ -60,14 +60,18 @@ const Navigate: React.FC<Props> = ({
     event.preventDefault();
   };
 
+  let touchedX: number | null = null;
+
   const handleSingleTouch = (event: TouchEvent) => {
     window.removeEventListener('touchend', handleSingleTouch);
 
-    if (event.changedTouches.length !== 1) return;
+    if (event.changedTouches.length === 0) return;
 
     const touch = event.changedTouches[0];
     const { clientX } = touch;
     const { innerWidth } = window;
+
+    if (clientX !== touchedX) return;
 
     event.preventDefault();
 
@@ -80,24 +84,25 @@ const Navigate: React.FC<Props> = ({
   };
 
   const handleTouchTimeout = () => {
-    window.removeEventListener('touchend', handleSingleTouch);
+    document.body.removeEventListener('touchend', handleSingleTouch);
   };
 
   const handleTouchstart = (event: TouchEvent) => {
     if (event.type !== 'touchstart') return;
+    touchedX = event.touches[0].clientX;
 
-    const timeThreshold = 100;
-    window.addEventListener('touchend', handleSingleTouch);
+    const timeThreshold = 500;
+    document.body.addEventListener('touchend', handleSingleTouch);
     setTimeout(handleTouchTimeout, timeThreshold);
   };
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
-    window.addEventListener('touchstart', handleTouchstart);
+    document.body.addEventListener('touchstart', handleTouchstart);
 
     return () => {
       window.removeEventListener('keydown', handleKeydown);
-      window.removeEventListener('touchstart', handleTouchstart);
+      document.body.removeEventListener('touchstart', handleTouchstart);
     };
   }, [location.pathname]);
 
