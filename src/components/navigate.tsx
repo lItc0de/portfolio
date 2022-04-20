@@ -71,9 +71,9 @@ const Navigate: React.FC<Props> = ({
   return (
     <div id={id} className={className}>
       {children}
-      <NextPageLink to={nextPagePath}>
+      {/* <NextPageLink to={nextPagePath}>
         <ArrowDownThick />
-      </NextPageLink>
+      </NextPageLink> */}
     </div>
   );
 };

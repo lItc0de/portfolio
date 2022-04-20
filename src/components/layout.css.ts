@@ -4,7 +4,6 @@ import { sprinkles } from '../styles/sprinkles.css';
 
 export const layout = style({
   color: vars.colors.text.normal,
-  backgroundColor: vars.colors.background.pageTransparent,
   padding: 0,
   minHeight: '100%',
   position: 'relative',
@@ -20,6 +19,7 @@ export const main = style([
     color: vars.colors.text.normal,
     gap: vars.spacing.pagePadding,
     position: 'relative',
+    flex: 1,
   },
   sprinkles({
     padding: {

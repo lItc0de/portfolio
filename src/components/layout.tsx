@@ -39,9 +39,7 @@ const Layout: React.FC<Props> = ({ children, location }) => {
       />
       <Background colorVars={colorVars} />
       <Navigate id="layout" className={styles.layout} location={location}>
-        <main className={styles.main}>
-          {children}
-        </main>
+        {children}
       </Navigate>
     </>
   );

@@ -131,3 +131,7 @@ globalStyle('ul > li::before', {
   marginLeft: '-1.2rem',
   fontSize: '1rem',
 });
+
+globalStyle('img', {
+  width: '100%',
+});
