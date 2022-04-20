@@ -5,7 +5,7 @@ import videoSrc from '../media/arSlanted/fallback-flow.webm';
 
 const ArSlanted: React.FC = () => (
   <Content nextPage="/arSlanted11/" nextPageText="Next">
-    <video src={videoSrc} autoPlay loop muted />
+    <video src={videoSrc} autoPlay loop muted playsInline />
   </Content>
 );
 
