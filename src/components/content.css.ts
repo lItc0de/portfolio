@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 import vars from '../styles/themes.css';
 import { sprinkles } from '../styles/sprinkles.css';
 
@@ -12,6 +12,7 @@ export const content = style([
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
+    justifyContent: 'center',
     width: '100%',
   },
   sprinkles({
@@ -25,4 +26,16 @@ export const content = style([
 export const nextPageLink = style({
   position: 'fixed',
   bottom: '1rem',
+});
+
+globalStyle(`${content} > img`, {
+  width: '100%',
+  maxHeight: '70vh',
+  objectFit: 'contain',
+});
+
+globalStyle(`${content} > video`, {
+  width: '100%',
+  maxHeight: '70vh',
+  objectFit: 'contain',
 });

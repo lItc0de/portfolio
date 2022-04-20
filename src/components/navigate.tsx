@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { navigate } from 'gatsby';
-import NextPageLink from './nextPageLink';
 import { routes } from '../utils/locationMapper';
-import ArrowDownThick from '../svgs/arrow-down-thick.svg';
 
 type Props = {
   location: Location;
@@ -19,7 +17,7 @@ const Navigate: React.FC<Props> = ({
   children, location, className, id,
 }) => {
   const routesCount = routes.length;
-  const [nextPagePath, setNextPagePath] = useState(routes[1]);
+  // const [nextPagePath, setNextPagePath] = useState(routes[1]);
 
   const getNextPagePath = () => {
     const currentIndex = routes.indexOf(location.pathname);
@@ -35,9 +33,9 @@ const Navigate: React.FC<Props> = ({
     return routes[currentIndex - 1];
   };
 
-  useEffect(() => {
-    setNextPagePath(getNextPagePath());
-  }, [location]);
+  // useEffect(() => {
+  //   setNextPagePath(getNextPagePath());
+  // }, [location]);
 
   const nextPage = () => {
     const currentIndex = routes.indexOf(location.pathname);
@@ -54,17 +52,52 @@ const Navigate: React.FC<Props> = ({
   const handleKeydown = (event: KeyboardEvent) => {
     if (event.key === undefined) return;
     if (event.key === 'ArrowDown') nextPage();
+    else if (event.key === 'ArrowRight') nextPage();
     else if (event.key === 'ArrowUp') prevPage();
+    else if (event.key === 'ArrowLeft') prevPage();
     else return;
 
     event.preventDefault();
   };
 
+  const handleSingleTouch = (event: TouchEvent) => {
+    window.removeEventListener('touchend', handleSingleTouch);
+
+    if (event.changedTouches.length !== 1) return;
+
+    const touch = event.changedTouches[0];
+    const { clientX } = touch;
+    const { innerWidth } = window;
+
+    event.preventDefault();
+
+    if (clientX < innerWidth / 2) {
+      prevPage();
+      return;
+    }
+
+    nextPage();
+  };
+
+  const handleTouchTimeout = () => {
+    window.removeEventListener('touchend', handleSingleTouch);
+  };
+
+  const handleTouchstart = (event: TouchEvent) => {
+    if (event.type !== 'touchstart') return;
+
+    const timeThreshold = 100;
+    window.addEventListener('touchend', handleSingleTouch);
+    setTimeout(handleTouchTimeout, timeThreshold);
+  };
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeydown);
+    window.addEventListener('touchstart', handleTouchstart);
 
     return () => {
       window.removeEventListener('keydown', handleKeydown);
+      window.removeEventListener('touchstart', handleTouchstart);
     };
   }, [location.pathname]);
 

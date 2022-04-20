@@ -5,17 +5,17 @@
 ###### Performance issues with multiple markers
 
 At the time of implementation the library was not jet designed to include a large ammount of
-`markers` and track them without creating `preformance issues`.
+**markers** and track them without creating **preformance issues**.
 
-The plan was to track `47 images` over `8 chapters` of the magazine but this just didn't work.
+The plan was to track **47 images** over **8 chapters** of the magazine but this just didn't work.
 So I had to come up with a solution for this problem.
-In my research I found out that it is possible to track around `12 markers` at the same time without
+In my research I found out that it is possible to track around **12 markers** at the same time without
 creating performance issues.
-The fix then was to split the `images` into groups and load the `markers` only for one group at the
+The fix then was to split the **images** into groups and load the **markers** only for one group at the
 same time.
 
 Then next question that arrises is how to split the images over the magazine?
-There I got pretty lucky with the distribution in the `8 chapters`.
-The chapter with the most images includes `14` and this was still ok for the performance.
-So in the end the website was seperated into the `8 chapters` and for every chapter only the
+There I got pretty lucky with the distribution in the **8 chapters**.
+The chapter with the most images includes **14** and this was still ok for the performance.
+So in the end the website was seperated into the **8 chapters** and for every chapter only the
 included images were tracked.
