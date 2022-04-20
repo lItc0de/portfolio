@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[658],{2354:function(e,t,a){a.r(t),a.d(t,{default:function(){return l}});var f=a(7294),n=a(8136),c=a(8871),r=a.p+"static/fallback-flow-53f8f27c4f518aff5a28583637abfce7.webm",l=function(){return f.createElement(n.Z,{nextPage:"/arSlanted11/",nextPageText:"Next"},f.createElement(c.Z,{src:r}))}}}]);
+//# sourceMappingURL=component---src-pages-ar-slanted-10-tsx-4d93cd1de442ea1d9b4d.js.map

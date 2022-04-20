@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[119],{4256:function(e,t,n){n.r(t),n.d(t,{default:function(){return l}});var a=n(7294),c=n(8136),r=n(8871),f=n.p+"static/final-d67b92d1adf02a6bbba4fe0d8cfa34ec.webm",l=function(){return a.createElement(c.Z,{nextPage:"/mateLights8/",nextPageText:"Next"},a.createElement(r.Z,{src:f}),a.createElement("p",null,"enjoy the light show"))}}}]);
+//# sourceMappingURL=component---src-pages-mate-lights-8-tsx-4723ab07b91475e35c1c.js.map
