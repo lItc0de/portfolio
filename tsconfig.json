@@ -107,6 +107,7 @@
     "./webp.d.ts",
     "./webm.d.ts",
     "./svg.d.ts",
-    "./gif.d.ts"
+    "./gif.d.ts",
+    "./mp4.d.ts",
   ]
 }

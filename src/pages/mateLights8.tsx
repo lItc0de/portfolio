@@ -2,7 +2,7 @@ import React from 'react';
 
 import Content from '../components/content';
 import Video from '../components/video';
-import final from '../media/mateLights/final.webm';
+import final from '../media/mateLights/final.mp4';
 
 const MateLights: React.FC = () => (
   <Content nextPage="/mateLights8/" nextPageText="Next">
