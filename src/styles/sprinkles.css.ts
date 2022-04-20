@@ -9,10 +9,12 @@ export const mediaQueries = {
 
 const space = {
   none: 0,
-  small: '0.25rem',
-  medium: '0.5rem',
-  large: '1rem',
-  xlarge: '2rem',
+  xsmall: '0.25rem',
+  small: '0.5rem',
+  normal: '1rem',
+  medium: '1.5rem',
+  large: '2rem',
+  xlarge: '3rem',
 };
 
 const pageWidth = {

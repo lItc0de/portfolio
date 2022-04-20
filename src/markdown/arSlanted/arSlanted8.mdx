@@ -1,21 +1,21 @@
 <title>Augmented Reality | Portfolio</title>
 
-##### Problem #1
+##### Problem #2
 
-###### Performance issues with multiple markers
+###### Combining a modern javascript framework with *AR.js*
 
-At the time of implementation the library was not jet designed to include a large ammount of
-`markers` and track them without creating `preformance issues`.
+**AR.js** is not designed to be used in a modern javascript frameworks like `react`.
+Therefore it was tricky to include it in a way that everything was working correctly (`marker loading` and access to the `camera`).
 
-The plan was to track `47 images` over `8 chapters` of the magazine but this just didn't work.
-So I had to come up with a solution for this problem.
-In my research I found out that it is possible to track around `12 markers` at the same time without
-creating performance issues.
-The fix then was to split the `images` into groups and load the `markers` only for one group at the
-same time.
+As I'm coming from a background of extensivly using modern frontend frameworks like `vuejs` or
+`react` I didn't want to miss out on all the convenience it gives me.
 
-Then next question that arrises is how to split the images over the magazine?
-There I got pretty lucky with the distribution in the `8 chapters`.
-The chapter with the most images includes `14` and this was still ok for the performance.
-So in the end the website was seperated into the `8 chapters` and for every chapter only the
-included images were tracked.
+Normally in a react app you would install a library via the `node package manager (npm)` but sadly
+**AR.js** just doesn't work this way. It expects to be used in a *static* web page, where it is
+loaded in the `head` of the `html document`. After being loaded it is immediatley executed,
+regardless of the rest of the react app beging loaded or not. So when it is loaded to fast and the
+react app is not finished builiding up the rest of the page it didn't work.
+
+Luckily there is some tooling around `react` called `gatsbyjs` that makes it easy to render the
+webpages on the server side and only serve *static* web pages.
+This allowed me to use `react` and `AR.js` together.

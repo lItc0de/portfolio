@@ -1,12 +1,21 @@
-##### Technology used:
-The base is a simple static website created with [gatsbyjs](https://www.gatsbyjs.com/).
-On top of it I'm using [AR.js](https://ar-js-org.github.io/AR.js-Docs/), which is a library
-designed to bring `augmented reality` to the web. It's features include `image tracking`,
-`location based AR` and `marker tracking`.
+<title>Augmented Reality | Portfolio</title>
 
-For this usecase I was picking the `marker tracking` functionality because with that it is possible
-to create `markers` for many different pictures and then show content when thy are detected by the
-library.
+##### Problem #1
 
-The idea itself, creating `markers` for images, load them into the library and show content based on
-what was found, sounds pretty easy, but there have been some problems to solve.
+###### Performance issues with multiple markers
+
+At the time of implementation the library was not jet designed to include a large ammount of
+`markers` and track them without creating `preformance issues`.
+
+The plan was to track `47 images` over `8 chapters` of the magazine but this just didn't work.
+So I had to come up with a solution for this problem.
+In my research I found out that it is possible to track around `12 markers` at the same time without
+creating performance issues.
+The fix then was to split the `images` into groups and load the `markers` only for one group at the
+same time.
+
+Then next question that arrises is how to split the images over the magazine?
+There I got pretty lucky with the distribution in the `8 chapters`.
+The chapter with the most images includes `14` and this was still ok for the performance.
+So in the end the website was seperated into the `8 chapters` and for every chapter only the
+included images were tracked.

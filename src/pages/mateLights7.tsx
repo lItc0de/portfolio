@@ -7,8 +7,8 @@ import step from '../media/mateLights/step5.webp';
 const MateLights: React.FC = () => (
   <Content nextPage="/mateLights8/" nextPageText="Next">
     <div className={styles.imageWrapper2}>
-      <img src={step} alt="step #5 connect the leds" />
-      <h5>step #5 connect the leds</h5>
+      <img src={step} alt="connect the leds" />
+      <p>connect the leds</p>
     </div>
   </Content>
 );

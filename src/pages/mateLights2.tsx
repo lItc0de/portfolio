@@ -8,7 +8,7 @@ const MateLights: React.FC = () => (
   <Content nextPage="/mateLights3/" nextPageText="Next">
     <div className={styles.imageWrapper2}>
       <img src={rotateGif} alt="mate lights in action" />
-      <h5>mate lights in action</h5>
+      <p>mate lights</p>
     </div>
   </Content>
 );

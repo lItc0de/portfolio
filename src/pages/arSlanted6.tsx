@@ -1,12 +1,11 @@
 import React from 'react';
 
-import * as styles from '../styles/arSlanted.css';
 import Content from '../components/content';
-import videoSrc from '../media/arSlanted/ar-flow.webm';
+import Markdown from '../markdown/arSlanted/arSlanted6.mdx';
 
 const ArSlanted: React.FC = () => (
   <Content nextPage="/arSlanted7/" nextPageText="Next">
-    <video className={styles.video6} src={videoSrc} autoPlay loop muted />
+    <Markdown />
   </Content>
 );
 

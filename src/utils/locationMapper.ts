@@ -1,6 +1,5 @@
 export const routes: string[] = [
   '/',
-  '/about/',
   '/arSlanted/',
   '/arSlanted2/',
   '/arSlanted3/',
@@ -12,7 +11,6 @@ export const routes: string[] = [
   '/arSlanted9/',
   '/arSlanted10/',
   '/arSlanted11/',
-  '/arSlanted12/',
   '/artworkGenerator/',
   '/artworkGenerator2/',
   '/artworkGenerator3/',
@@ -29,4 +27,5 @@ export const routes: string[] = [
   '/mateLights7/',
   '/mateLights8/',
   '/mateLights9/',
+  '/end/',
 ];

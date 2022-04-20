@@ -8,7 +8,7 @@ const ArtwortGenerator: React.FC = () => (
   <Content nextPage="/artwortGenerator5/" nextPageText="Next">
     <div className={styles.imageWrapper2}>
       <img src={webpage} alt="artwork website" />
-      <h5>artwork website</h5>
+      <p>artwork website</p>
     </div>
   </Content>
 );

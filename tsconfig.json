@@ -101,5 +101,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/**/*", "**/*.mdx", "./webp.d.ts", "./webm.d.ts", "./svg.d.ts"]
+  "include": [
+    "./src/**/*",
+    "**/*.mdx",
+    "./webp.d.ts",
+    "./webm.d.ts",
+    "./svg.d.ts",
+    "./gif.d.ts"
+  ]
 }

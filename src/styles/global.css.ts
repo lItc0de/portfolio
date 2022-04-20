@@ -114,8 +114,8 @@ globalStyle('h6', {
 });
 
 // Lists
-globalStyle('ul', {
-  padding: '0 2.2rem',
+globalStyle('ul, ol', {
+  padding: '0 1.5rem',
 });
 
 globalStyle('ul > li', {
