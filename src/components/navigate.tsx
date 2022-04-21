@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
+import { mdiArrowRight } from '@mdi/js';
+import Icon from '@mdi/react';
 import { routes } from '../utils/locationMapper';
+import NextPageLink from './nextPageLink';
 
 type Props = {
   location: Location;
@@ -17,7 +20,7 @@ const Navigate: React.FC<Props> = ({
   children, location, className, id,
 }) => {
   const routesCount = routes.length;
-  // const [nextPagePath, setNextPagePath] = useState(routes[1]);
+  const [nextPagePath, setNextPagePath] = useState(routes[1]);
 
   const getNextPagePath = () => {
     const currentIndex = routes.indexOf(location.pathname);
@@ -33,9 +36,9 @@ const Navigate: React.FC<Props> = ({
     return routes[currentIndex - 1];
   };
 
-  // useEffect(() => {
-  //   setNextPagePath(getNextPagePath());
-  // }, [location]);
+  useEffect(() => {
+    setNextPagePath(getNextPagePath());
+  }, [location]);
 
   const nextPage = () => {
     const currentIndex = routes.indexOf(location.pathname);
@@ -113,9 +116,16 @@ const Navigate: React.FC<Props> = ({
   return (
     <div id={id} className={className}>
       {children}
-      {/* <NextPageLink to={nextPagePath}>
-        <ArrowDownThick />
-      </NextPageLink> */}
+      {nextPagePath !== routes[0] && (
+        <NextPageLink to={nextPagePath}>
+          next page
+          <Icon
+            path={mdiArrowRight}
+            title="Next"
+            size={1}
+          />
+        </NextPageLink>
+      )}
     </div>
   );
 };

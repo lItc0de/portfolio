@@ -21,6 +21,8 @@
     "@fontsource/karla": "^4.5.5",
     "@fontsource/raleway": "^4.5.5",
     "@fontsource/shrikhand": "^4.5.5",
+    "@mdi/js": "^6.6.96",
+    "@mdi/react": "^1.6.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@types/react-helmet": "^6.1.5",
