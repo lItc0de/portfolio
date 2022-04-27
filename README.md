@@ -4,5 +4,6 @@
 
 To run the page just type:
 ```sh
+npm install
 npm run develop
 ```
